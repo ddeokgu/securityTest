@@ -5,6 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-<h1>UserMain</h1>
+<h1 th:text="${'이름 : '+name}"></h1>
+<h1 th:text="${'전화번호 : '+ number}"></h1>
+<h1 th:text="${gender eq 'M' ? '남' : '여'}"/>
+<h1 th:text="${name eq '진혜민' ? '1': '2'}"></h1>
+<h1 th:text="${'주소 : ' + address}"></h1>
+
+<h1 th:text="${'이름 : ' + user.getName()}"></h1>
+<h1 th:text="${'전화번호 : ' + user.getPhoneNumber()}"></h1>
+<h1 th:text="${user.getName() eq '진혜민' ? '1':'2'}"></h1>
+<h1 th:text="${'주소 : ' + address}"></h1>
+
 </body>
 </html>

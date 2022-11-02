@@ -5,6 +5,7 @@ import com.thecar.securitytest.security.UserInfo;
 import com.thecar.securitytest.security.model.UserRole;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,6 +20,8 @@ public class UserSecurityService {
 
     @Autowired
     private final UserRepository userRepository;
+    @Autowired
+    private MessageSource messageSource;
 
     public UserInfo loadUserByUsername(String username){
 
@@ -28,6 +31,7 @@ public class UserSecurityService {
 
         if(user == null) {
             throw new BadCredentialsException("존재하지 않는 사용자입니다.");
+            //throw new BadCredentialsException(messageSource.getMessage("fail.common.pwd.different", null,Locale.getDefault()));
         }
 
         List<GrantedAuthority> authorities = new ArrayList<>();

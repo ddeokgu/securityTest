@@ -20,6 +20,7 @@ public class Member {
     private String age;
     private String email;
     private String phoneNumber;
+    private String address;
 
 
 }

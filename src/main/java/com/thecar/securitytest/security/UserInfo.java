@@ -23,6 +23,7 @@ public class UserInfo implements CredentialHandler, UserDetails {
     private String age;
     private String email;
     private String phoneNumber;
+    private String address;
 
 
     public Long getSeq() {
